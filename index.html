@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Optimus-Buy — Choose Your Direction</title>
+<meta name="description" content="Five storefront directions for Optimus-Buy, Kaduna's 24hr wardrobe. Tap through and compare.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --void:#14120F;
+    --paper:#F0ECE3;
+    --thread:#C9503A;
+    --line:rgba(240,236,227,0.14);
+    --muted:#9A9488;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--void);
+    color:var(--paper);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+  }
+  a{color:inherit;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding:64px 24px 48px;
+    max-width:720px;
+    margin:0 auto;
+    text-align:left;
+  }
+  .eyebrow{
+    font-family:'Space Mono',monospace;
+    font-size:11px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--thread);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:22px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:8px;height:8px;
+    border-radius:50%;
+    background:var(--thread);
+    box-shadow:0 0 8px var(--thread);
+  }
+  h1{
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    font-size:clamp(34px,7vw,54px);
+    line-height:1.06;
+    letter-spacing:-.02em;
+  }
+  h1 em{
+    font-family:'Instrument Serif',serif;
+    font-style:italic;
+    font-weight:400;
+    color:var(--thread);
+  }
+  .sub{
+    margin-top:20px;
+    font-size:16px;
+    line-height:1.6;
+    color:var(--muted);
+    max-width:52ch;
+  }
+  .howto{
+    margin-top:28px;
+    padding-top:24px;
+    border-top:1px solid var(--line);
+    font-family:'Space Mono',monospace;
+    font-size:12px;
+    line-height:1.7;
+    color:var(--muted);
+    letter-spacing:.01em;
+  }
+  .howto b{color:var(--paper);}
+
+  /* ---------- Card grid ---------- */
+  .grid{
+    max-width:720px;
+    margin:0 auto;
+    padding:8px 24px 80px;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+  }
+  .card{
+    position:relative;
+    display:block;
+    text-decoration:none;
+    background:var(--paper);
+    color:var(--void);
+    border-radius:6px;
+    overflow:hidden;
+    transition:transform .22s ease, box-shadow .22s ease;
+    box-shadow:0 1px 0 rgba(0,0,0,.2);
+  }
+  .card:hover, .card:focus-visible{
+    transform:translateY(-3px);
+    box-shadow:0 14px 28px rgba(0,0,0,.35);
+  }
+  .card:focus-visible{outline:2px solid var(--thread);outline-offset:3px;}
+
+  .ribbon{
+    display:flex;
+    height:14px;
+    width:100%;
+  }
+  .ribbon span{flex:1;}
+
+  .card-body{
+    padding:22px 22px 24px;
+    position:relative;
+  }
+
+  /* punch-hole tag detail */
+  .card-body::before{
+    content:"";
+    position:absolute;
+    top:22px; right:22px;
+    width:14px;height:14px;
+    border-radius:50%;
+    background:var(--void);
+    border:1px solid rgba(20,18,15,.15);
+  }
+
+  .card-label{
+    font-family:'Space Mono',monospace;
+    font-size:10.5px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:rgba(20,18,15,.55);
+    margin-bottom:10px;
+  }
+  .card-name{
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    font-size:22px;
+    letter-spacing:-.01em;
+    max-width:80%;
+  }
+  .card-tag{
+    font-family:'Instrument Serif',serif;
+    font-style:italic;
+    font-size:17px;
+    margin-top:8px;
+    color:rgba(20,18,15,.75);
+    max-width:85%;
+  }
+  .card-meta{
+    margin-top:16px;
+    padding-top:14px;
+    border-top:1px solid rgba(20,18,15,.12);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-family:'Space Mono',monospace;
+    font-size:11px;
+    letter-spacing:.04em;
+    color:rgba(20,18,15,.55);
+  }
+  .card-cta{
+    font-weight:700;
+    color:var(--void);
+  }
+  .card-cta::after{content:" →";}
+
+  /* ---------- Footer ---------- */
+  footer{
+    max-width:720px;
+    margin:0 auto;
+    padding:0 24px 56px;
+    font-family:'Space Mono',monospace;
+    font-size:11px;
+    color:var(--muted);
+    letter-spacing:.03em;
+  }
+
+  @media (min-width:640px){
+    .hero{padding:88px 40px 56px;}
+    .grid{padding:8px 40px 96px;}
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="eyebrow">Design Preview — 5 Directions, 1 Store</div>
+  <h1>Welcome, <em>Optimus-Buy.</em></h1>
+  <p class="sub">Same 24-hour Kaduna wardrobe, five different ways to wear it. Each direction below is a full, working page — tap in, look around, and come back to compare another.</p>
+  <div class="howto"><b>How to use this:</b> tap any swatch to open the full page. Use the "← All Directions" tag in the top-left corner of that page to jump straight back here.</div>
+</section>
+
+<div class="grid">
+
+  <a class="card" href="optimus-buy-streetwear.html">
+    <div class="ribbon">
+      <span style="background:#12151B"></span>
+      <span style="background:#E14E3A"></span>
+      <span style="background:#4C7EBF"></span>
+    </div>
+    <div class="card-body">
+      <div class="card-label">Option A — Industrial Streetwear</div>
+      <div class="card-name">Gear up, any hour.</div>
+      <div class="card-tag">Rugged, garage-built, open 24/7.</div>
+      <div class="card-meta"><span>Anton · Inter · Space Mono</span><span class="card-cta">View</span></div>
+    </div>
+  </a>
+
+  <a class="card" href="optimus-buy-luxury.html">
+    <div class="ribbon">
+      <span style="background:#171715"></span>
+      <span style="background:#9C7A45"></span>
+      <span style="background:#F6F5F2"></span>
+    </div>
+    <div class="card-body">
+      <div class="card-label">Option B — Quiet Luxury</div>
+      <div class="card-name">Considered clothing.</div>
+      <div class="card-tag">No noise, all restraint.</div>
+      <div class="card-meta"><span>Bricolage · Inter · JetBrains Mono</span><span class="card-cta">View</span></div>
+    </div>
+  </a>
+
+  <a class="card" href="optimus-buy-editorial.html">
+    <div class="ribbon">
+      <span style="background:#181614"></span>
+      <span style="background:#6B1E2B"></span>
+      <span style="background:#1F5C4B"></span>
+    </div>
+    <div class="card-body">
+      <div class="card-label">Option C — Editorial</div>
+      <div class="card-name">The Edit.</div>
+      <div class="card-tag">Reads like a magazine, sells like a store.</div>
+      <div class="card-meta"><span>Fraunces · Work Sans · IBM Plex Mono</span><span class="card-cta">View</span></div>
+    </div>
+  </a>
+
+  <a class="card" href="optimus-buy-market.html">
+    <div class="ribbon">
+      <span style="background:#D6336C"></span>
+      <span style="background:#E8792B"></span>
+      <span style="background:#F2B705"></span>
+    </div>
+    <div class="card-body">
+      <div class="card-label">Option D — Market / Playful</div>
+      <div class="card-name">Market day, every day.</div>
+      <div class="card-tag">Loud, warm, impossible to scroll past.</div>
+      <div class="card-meta"><span>Bungee · Baloo 2 · Space Mono</span><span class="card-cta">View</span></div>
+    </div>
+  </a>
+
+  <a class="card" href="optimus-buy-neon.html">
+    <div class="ribbon">
+      <span style="background:#0A0A14"></span>
+      <span style="background:#FF2E88"></span>
+      <span style="background:#29F1D6"></span>
+    </div>
+    <div class="card-body">
+      <div class="card-label">Option E — Neon Nightlife</div>
+      <div class="card-name">The store never sleeps.</div>
+      <div class="card-tag">Glow-in-the-dark, open all night.</div>
+      <div class="card-meta"><span>Audiowide · Space Grotesk · Space Mono</span><span class="card-cta">View</span></div>
+    </div>
+  </a>
+
+</div>
+
+<footer>Optimus-Buy — Kaduna State · Design directions prepared for review · Not the final site</footer>
+
+</body>
+</html>
